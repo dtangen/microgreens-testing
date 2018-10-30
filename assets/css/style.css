@@ -1,0 +1,152 @@
+/* General */
+body {
+    background: #FDFC47;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgb(86, 160, 26), rgb(245, 244, 200));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgb(86, 160, 26), rgb(245, 244, 200)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar {
+    background-color: rgb(86, 160, 26);
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: auto;
+    padding: none;
+    /* border: solid 10px white; */
+}
+
+.carousel-image {
+    width: 100%;
+    height: 700px;
+    overflow: auto;;
+}
+
+.carousel-overlay {
+    width: 100%;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    text-align:  center;
+    background-color: rgb(134, 82, 197);
+    background:  rgba(134, 82, 197, 0.5);
+}
+
+.card-container {
+    margin: 20px 0px;
+    /* height: 650px; */
+}
+
+.home-card {
+    width: 32%;
+    height: auto;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: solid 5px white;
+}
+
+.card-img-top {
+    height: 100%;
+}
+
+.card-text {
+    height: auto;
+    min-height:  100px;
+}
+
+.btn {
+    font-weight: bold;
+    width: 150px;
+    background-color: rgb(86, 160, 26);
+    color: white;
+}
+
+.buy-header {
+    border-bottom: dashed 2px black;
+    margin-bottom: 0px;
+}
+
+.buy-container {
+    width: 100%;
+    min-height:  50px;
+    text-align: center;
+}
+
+.buy-row {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    height: 300px;
+}
+
+.purchase-options {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+}
+
+.purchase-options h2 {
+   width: 100%;
+}
+
+.newsletter-container {
+    margin: auto;
+    text-align: center;
+    background-color: rgb(134, 82, 197);
+    color: white;
+    padding: 10px;
+    height: 300px;
+}
+
+.newsletter-header {
+    width: 100%;
+}
+
+.contact-container {
+    width: 100%;
+    min-height:  50px;
+    text-align: center;
+}
+
+.follow-us {
+    border-bottom: solid 2px black;
+}
+
+.contact-list-social {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+}
+
+.contact-list-social i {
+    color: rgb(134, 82, 197);
+    font-size: 5em;
+    padding: 8px;
+  }
+
+  .product-card {
+    width: 32%;
+    height: auto;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: solid 5px white;
+  }
+
+.footer {
+    margin-bottom:  0px;
+}

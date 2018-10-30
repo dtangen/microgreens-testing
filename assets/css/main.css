@@ -1,0 +1,373 @@
+/* ---------- General---------- */
+:root {
+  --main-green: rgb(86, 160, 26);
+  --main-purple: rgb(134, 82, 197);
+  --main-yellow: rgb(245, 244, 200);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: #fdfc47; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    rgb(86, 160, 26),
+    rgb(245, 244, 200)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgb(86, 160, 26),
+    rgb(245, 244, 200)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.content {
+  height: 200vh;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto 1fr;
+}
+/* ---------- Home Page ---------- */
+
+/* ----- Navbar ----- */
+header {
+  background: var(--main-green);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--main-green);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 0.25em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: var(--main-purple);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 50ms ease-in-out 250ms;
+}
+
+/* ----- Jumbotron ----- */
+.jumbotron {
+  margin-top: 80px;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  background: url(../images//purple\kohlrabi\crop\\(1\).jpg) no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* ----- Banner ----- */
+.banner {
+  color: white;
+  font-size: 0.95rem;
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+  background-color: var(--main-purple);
+  background: rgba(134, 82, 197, 0.5);
+}
+
+/* ----- Message ----- */
+.message {
+  display: flex;
+  justify-content: center;
+}
+
+/* ----- Tagline ----- */
+.tagline {
+  display: none;
+}
+
+/* ----- Card ----- */
+.card {
+  background-color: white;
+  width: calc(100% - 20px);
+  height: 25vh;
+  margin: 0.5em;
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.card-img-div {
+  width: calc(100% - 60px);
+  height: 300px;
+  overflow: hidden;
+  padding: 5px;
+  display: none;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0.25em;
+}
+
+.card-text {
+  display: flex;
+  align-items: center;
+}
+
+.card-button {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 70px;
+  color: white;
+  background-color: var(--main-green);
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+}
+
+/* ----- Buy ----- */
+.buy {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.buy-header {
+  border-bottom: dashed 2px black;
+}
+
+/* ----- Subscribe ----- */
+.subscribe {
+  background-color: var(--main-purple);
+  color: white;
+  text-align: center;
+  height: 35vh;
+  margin: 1em 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 35%;
+  width: 100%;
+  overflow: auto;
+  border: none;
+  border-radius: 2px;
+}
+
+.modal-dialog {
+  background-color: white;
+  padding: 1em;
+}
+
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+/* ----- Follow ----- */
+.follow {
+  text-align: center;
+  background-color: var(--main-yellow);
+}
+
+.follow h1 {
+  margin: 0.5em 0;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.social i {
+  color: var(--main-purple);
+  font-size: 3em;
+  padding: 0px;
+}
+
+/* ----- Footer ----- */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-green);
+  height: 80px;
+  margin-top: 1em;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+
+/* -------------------- Tablet Screen -------------------- */
+@media screen and (min-width: 768px) {
+  /* ---------- Home Page ---------- */
+
+  /* ----- Navbar ----- */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(500px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / span 1;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: var(--main-purple);
+    position: absolute;
+    bottom: -1.6em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+
+  /* ----- Jumbotron ----- */
+  .jumbotron {
+    margin-top: 80px;
+    width: 100%;
+    height: 40vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  /* ----- Tagline ----- */
+  .tagline {
+    display: flex;
+    justify-content: center;
+  }
+}
